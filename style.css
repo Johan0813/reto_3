@@ -1,0 +1,80 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fondo general */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #000000, #000814, #001f3f);
+    color: white;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Contenedor del título */
+.container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.container h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+/* Formulario */
+form {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 30px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    gap: 15px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+/* Inputs */
+form input {
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    background: rgba(255,255,255,0.1);
+    color: white;
+}
+
+/* Placeholder */
+form input::placeholder {
+    color: #ccc;
+}
+
+/* Botón */
+form button {
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #0077ff;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Hover botón */
+form button:hover {
+    background: #005fcc;
+    transform: scale(1.05);
+}
+
+/* Efecto al escribir */
+form input:focus {
+    border: 1px solid #0077ff;
+}

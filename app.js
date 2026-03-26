@@ -1,31 +1,16 @@
-// Espera a que cargue la página
-document.addEventListener("DOMContentLoaded", () => {
+function enviarFormulario(event) {
+    event.preventDefault();
 
-    const form = document.querySelector("form");
+    var nombre = document.getElementById("nombre").value;
+    var correo = document.getElementById("correo").value;
+    var identificacion = document.getElementById("identificacion").value;
 
-    form.addEventListener("submit", (e) => {
-        e.preventDefault(); // evita que se recargue la página
+    if (nombre == "" || correo == "" || identificacion == "") {
+        alert("Complete todos los campos");
+    } else {
+        alert("Formulario enviado");
+        document.forms[0].reset();
+    }
+}
 
-        // Obtener valores
-        const nombre = document.querySelector('input[type="text"]').value;
-        const correo = document.querySelector('input[type="email"]').value;
-        const identificacion = document.querySelectorAll('input')[2].value;
-
-        // Validación simple
-        if (nombre === "" || correo === "" || identificacion === "") {
-            alert("Todos los campos son obligatorios");
-            return;
-        }
-
-        // Mostrar datos en consola
-        console.log("Nombre:", nombre);
-        console.log("Correo:", correo);
-        console.log("Identificación:", identificacion);
-
-        alert("Formulario enviado correctamente");
-
-        // Limpiar formulario
-        form.reset();
-    });
-
-});
+document.getElementsByTagName("form")[0].onsubmit = enviarFormulario;
